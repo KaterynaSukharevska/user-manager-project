@@ -102,8 +102,6 @@ $(document).ready(function () {
 
     const usersFromMemory = App.getAllUsers('users');
     if (usersFromMemory && Object.keys(usersFromMemory).length >= 0) {
-        // const textNoUser = document.querySelector(".no-users"); not working!!!!
-        // textNoUser.remove();
         showUsers(usersFromMemory);
     } else {
         const newDiv = document.createElement("div");
