@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="483f0818-ea37-434e-a70c-0ffa8aed63df" name="Default Changelist" comment="" />
+    <list default="true" id="483f0818-ea37-434e-a70c-0ffa8aed63df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/app/app-logic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app/app.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,6 +34,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,7 +96,25 @@
       <workItem from="1638815895654" duration="1634000" />
       <workItem from="1638817825501" duration="2606000" />
       <workItem from="1638989229326" duration="1780000" />
-      <workItem from="1638991048649" duration="1409000" />
+      <workItem from="1638991048649" duration="1610000" />
+      <workItem from="1638993615633" duration="725000" />
+      <workItem from="1639160528140" duration="1803000" />
+      <workItem from="1639162364164" duration="1451000" />
+      <workItem from="1639247134617" duration="1773000" />
+      <workItem from="1639248940890" duration="1981000" />
+      <workItem from="1639250952346" duration="1777000" />
+      <workItem from="1639252761114" duration="1543000" />
+      <workItem from="1639593144885" duration="610000" />
+      <workItem from="1639919526900" duration="603000" />
+      <workItem from="1640175080816" duration="1789000" />
+      <workItem from="1640176903576" duration="606000" />
+      <workItem from="1640180023874" duration="1793000" />
+      <workItem from="1640181840651" duration="1793000" />
+      <workItem from="1640183654330" duration="1258000" />
+      <workItem from="1641051085830" duration="1782000" />
+      <workItem from="1641052894749" duration="2725000" />
+      <workItem from="1641147582933" duration="999000" />
+      <workItem from="1641149400116" duration="767000" />
     </task>
     <servers />
   </component>
