@@ -49,14 +49,9 @@ class Application {
     }
 }
 
-// TODO Update table row
-// TODO Validate email duplicate
-// TODO Edit email, validate duplicate during process
-// TODO Add date
-
 let App = new Application;
 
-$(document).ready(function () {
+
 
     /********** Show ************/
 
@@ -114,33 +109,9 @@ $(document).ready(function () {
     }
 
     // Save new user
-    document.querySelector("#add-users button").addEventListener("click", (event) => {
-        let user = {};
-        let firstName = document.getElementById("firstName").value;
-        let lastName = document.getElementById("lastName").value;
-        let email = document.getElementById("email").value;
-        let login = document.getElementById("login").value;
-        let password = document.getElementById("password").value;
-        let role = document.getElementById("role").checked;
-        let status = document.getElementById("status").checked;
-
-        user.firstName = (firstName) ? firstName : 'User';
-        user.lastName = (lastName) ? lastName : 'Guest';
-        user.email = (email) ? email : false;
-        user.login = (login) ? login : 'user';
-        user.password = (password) ? password : 'guest123';
-        user.role = (role) ? "admin" : "user";
-        user.status = (status) ? "active" : "inactive";
-
-        if (user.email) {
-            App.addNewUser('users', user);
-        }
-
-        document.getElementById("add-users").reset();
-
-        addUserToList(user);
-
-        event.preventDefault();
+    const form = document.querySelector("#add-users");
+    form.addEventListener("submit", (event) => {
+        formValidation(event);
     })
 
     // Fill modal form
@@ -184,6 +155,7 @@ $(document).ready(function () {
         event.preventDefault();
     })
 
+    // Delete user
     document.querySelector(".delete").addEventListener("click", (event) => {
         let email = event.target.getAttribute('data-email');
         App.removeUser(email);
@@ -197,4 +169,66 @@ $(document).ready(function () {
         let line = btn.closest("tr");
         line.style.display = "none";
     });
-});
+
+
+//////////////// Helpers /////////////////////
+
+
+//Changing custom "on" to "admin"
+const changeRoleAndStatus = (newUser) => {
+    if(newUser.role === "on") {
+        newUser.role = "admin"
+    } else {
+        newUser.role = "user"
+    }
+    if(newUser.status === "on") {
+        newUser.status = "active"
+    } else {
+        newUser.status = "inactive"
+    }
+}
+
+//Form validation
+const formValidation = (event) => {
+    if (!form.checkValidity()) {
+        if(form.classList.contains('was-validated')) {
+            checkUserValidation();
+            form.classList.remove('was-validated');
+        } else {
+            form.classList.add('was-validated');
+        }
+
+    } else {
+        checkUserValidation();
+    }
+    event.preventDefault()
+    event.stopPropagation()
+}
+
+//Validation user and add user to users
+const checkUserValidation = () => {
+    const users = App.getAllUsers('users');
+    const formData = new FormData(form);
+    const user = {};
+
+    formData.forEach((value, key) => user[key] = value);
+    changeRoleAndStatus(user);
+
+    const validate = (data) => {
+        let valid = true;
+        if (data.length > 0) {
+            if (data.some((existedUser) => existedUser.email === user.email)) {
+                form.classList.add('was-validated');
+                document.getElementById("email").setCustomValidity("invalid");
+                valid = false;
+            }
+        }
+        return valid;
+    };
+
+    if (validate(users)) {
+        App.addNewUser('users', user);
+        document.getElementById("add-users").reset();
+        addUserToList(user);
+    }
+}
